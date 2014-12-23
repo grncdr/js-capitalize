@@ -26,6 +26,16 @@ test('Capitalize each word', function (t) {
 })
 ```
 
+Discards invalid strings:
+
+```javascript
+test('Ignore invalid strings', function (t) {
+
+  t.plan(1)
+  t.equal(capitalize.words(' '), ' ');
+})
+```
+
 ## Install
 
     npm install capitalize
