@@ -3,7 +3,7 @@ module.exports = function (string) {
 }
 
 module.exports.words = function (string) {
-  return string.replace(/(^|\W)(\w)/g, function (m) {
+  return string.replace(/(^|[^a-zA-Z0-9_'])(\w)/g, function (m) {
     return m.toUpperCase()
   })
 }
