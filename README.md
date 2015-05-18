@@ -26,10 +26,19 @@ test('Capitalize each word', function (t) {
 })
 ```
 
-And ensure that quotes are handled within the string:
+Thanks to [@c990802](https://github.com/grncdr/js-capitalize/pull/2) and [Stack Overflow](http://stackoverflow.com/questions/20690499/concrete-javascript-regex-for-accented-characters-diacritics), capitalize handles international characters:
 
 ```javascript
-test('Capitalize each word ensuring that quotes do not confuse it', function(t) {
+test('Capitalize words with international characters', function (t) {
+  t.plan(1)
+  t.equal(capitalize.words('hello-cañapolísas'), 'Hello-Cañapolísas')
+})
+```
+
+and thanks to [@ultraflynn](https://github.com/grncdr/js-capitalize/pull/3), capitalize properly handles quotes within the string:
+
+```javascript
+test('Capitalize each word, ignoring quotes', function(t) {
     t.plan(1)
     t.equal(capitalize.words("it's a nice day"), "It's A Nice Day")
 })
