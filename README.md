@@ -26,6 +26,15 @@ test('Capitalize each word', function (t) {
 })
 ```
 
+And ensure that quotes are handled within the string:
+
+```javascript
+test('Capitalize each word ensuring that quotes do not confuse it', function(t) {
+    t.plan(1)
+    t.equal(capitalize.words("it's a nice day"), "It's A Nice Day")
+})
+```
+
 ## Install
 
     npm install capitalize
