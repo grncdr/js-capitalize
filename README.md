@@ -7,7 +7,7 @@ Capitalize the first letter of a string, or all words in a string.
 Capitalize the first letter of a string:
 
 ```javascript
-var capitalize = require('./')
+var capitalize = require('capitalize')
 
 var test = require('tape')
 
