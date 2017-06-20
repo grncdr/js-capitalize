@@ -26,6 +26,40 @@ test('Capitalize each word', function (t) {
 })
 ```
 
+No matter the original case:
+
+```javascript
+test('Capitalize first letter with original string...', function (t) {
+  t.plan(2)
+  
+  t.test('...in upper case', function (t1) {
+    t1.plan(1)
+    t1.equal(capitalize.words("UNITED STATES"), "United States")
+  })
+  
+  t.test('...in mixed case', function (t2) {
+    t2.plan(1)
+    t2.equal(capitalize.words("uNiTeD sTaTeS"), "United States")
+  })
+  
+})
+
+test('Capitalize each word with original string...', function (t) {
+  t.plan(2)
+  
+  t.test('...in upper case', function (t1) {
+    t1.plan(1)
+    t1.equal(capitalize.words("UNITED STATES"), "United States")
+  })
+  
+  t.test('...in mixed case', function (t2) {
+    t2.plan(1)
+    t2.equal(capitalize.words("uNiTeD sTaTeS"), "United States")
+  })
+  
+})
+```
+
 Thanks to [@c990802](https://github.com/grncdr/js-capitalize/pull/2) and [Stack Overflow](http://stackoverflow.com/questions/20690499/concrete-javascript-regex-for-accented-characters-diacritics), capitalize handles international characters:
 
 ```javascript
