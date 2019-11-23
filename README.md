@@ -83,12 +83,12 @@ and thanks to [@sergejkaravajnij](https://github.com/grncdr/js-capitalize/pull/9
 ```javascript
 test('Capitalize a string, preserving the original case of other letters', function (t) {
   t.plan(1)
-  t.equal(capitalize('canDoItRight', 'CanDoItRight'))
+  t.equal(capitalize('canDoItRight', true), 'CanDoItRight')
 })
 
 test('Capitalize words, preserving the case', function (t) {
   t.plan(1)
-  t.equal(captialize.words('on gitHub'), 'On GitHub')
+  t.equal(captialize.words('on gitHub', true), 'On GitHub')
 })
 ```
 
