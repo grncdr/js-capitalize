@@ -1,6 +1,6 @@
 {
   "name": "capitalize",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "capitalize the first letter of a string, or all words in a string",
   "main": "index.js",
   "dependencies": {},
