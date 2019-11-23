@@ -78,6 +78,20 @@ test('Capitalize each word, ignoring quotes', function(t) {
 })
 ```
 
+and thanks to [@sergejkaravajnij](https://github.com/grncdr/js-capitalize/pull/9), capitalize also supports a second boolean parameter to preserve casing of the rest of the strings content:
+
+```javascript
+test('Capitalize a string, preserving the original case of other letters', function (t) {
+  t.plan(1)
+  t.equal(capitalize('canDoItRight', 'CanDoItRight'))
+})
+
+test('Capitalize words, preserving the case', function (t) {
+  t.plan(1)
+  t.equal(captialize.words('on gitHub'), 'On GitHub')
+})
+```
+
 ## Install
 
     npm install capitalize
