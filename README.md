@@ -88,7 +88,7 @@ test('Capitalize a string, preserving the original case of other letters', funct
 
 test('Capitalize words, preserving the case', function (t) {
   t.plan(1)
-  t.equal(captialize.words('on gitHub', true), 'On GitHub')
+  t.equal(capitalize.words('on gitHub', true), 'On GitHub')
 })
 ```
 
