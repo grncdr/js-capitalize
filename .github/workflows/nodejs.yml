@@ -19,6 +19,7 @@ jobs:
       - name: npm install and test
         run: |
           npm ci
+          ( cd node_modules && ln -s ../ capitalize)
           npm test
         env:
           CI: true
