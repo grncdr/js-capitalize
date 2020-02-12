@@ -9,7 +9,7 @@ module.exports.words = function (string, preserve) {
   if (!preserve) {
     string = string.toLowerCase();
   }
-  return string.replace(/(^|[^a-zA-Z\u00C0-\u017F'])([a-zA-Z\u00C0-\u017F])/g, function (m) {
+  return string.replace(/(^|[^a-zA-Z\u00C0-\u017F\u0400-\u04FF'])([a-zA-Z\u00C0-\u017F\u0400-\u04FF])/g, function (m) {
     return m.toUpperCase()
   })
 }

@@ -92,6 +92,13 @@ test('Capitalize words, preserving the case', function (t) {
 })
 ```
 
+```javascript
+test('Capitalize words with cyrillic characters', function (t) {
+  t.plan(1)
+  t.equal(capitalize.words('привет мир'), "Привет Мир")
+})
+```
+
 ## Install
 
     npm install capitalize
