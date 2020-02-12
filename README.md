@@ -69,6 +69,15 @@ test('Capitalize words with international characters', function (t) {
 })
 ```
 
+and thanks to [@6akcuk](https://github.com/grncdr/js-capitalize/pull/11) it can also capitalize cyrillic characters:
+
+```javascript
+test('Capitalize words with cyrillic characters', function (t) {
+  t.plan(1)
+  t.equal(capitalize.words('привет мир'), "Привет Мир")
+})
+```
+
 and thanks to [@ultraflynn](https://github.com/grncdr/js-capitalize/pull/3), capitalize properly handles quotes within the string:
 
 ```javascript
@@ -92,12 +101,6 @@ test('Capitalize words, preserving the case', function (t) {
 })
 ```
 
-```javascript
-test('Capitalize words with cyrillic characters', function (t) {
-  t.plan(1)
-  t.equal(capitalize.words('привет мир'), "Привет Мир")
-})
-```
 
 ## Install
 
