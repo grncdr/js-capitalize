@@ -31,32 +31,32 @@ No matter the original case:
 ```javascript
 test('Capitalize first letter with original string...', function (t) {
   t.plan(2)
-  
+
   t.test('...in upper case', function (t1) {
     t1.plan(1)
     t1.equal(capitalize.words("UNITED STATES"), "United States")
   })
-  
+
   t.test('...in mixed case', function (t2) {
     t2.plan(1)
     t2.equal(capitalize.words("uNiTeD sTaTeS"), "United States")
   })
-  
+
 })
 
 test('Capitalize each word with original string...', function (t) {
   t.plan(2)
-  
+
   t.test('...in upper case', function (t1) {
     t1.plan(1)
     t1.equal(capitalize.words("UNITED STATES"), "United States")
   })
-  
+
   t.test('...in mixed case', function (t2) {
     t2.plan(1)
     t2.equal(capitalize.words("uNiTeD sTaTeS"), "United States")
   })
-  
+
 })
 ```
 
@@ -101,10 +101,19 @@ test('Capitalize words, preserving the case', function (t) {
 })
 ```
 
+and thanks to [@rubengmurray](https://github.com/grncdr/js-capitalize/pull/13), capitalize now handles shorthand ordinal numbers as would be expected:
+
+```javascript
+test('Capitalize words, handling shorthand ordinals (1st, 2nd, 3rd) correctly', function (t) {
+  t.plan(1)
+  t.equal(capitalize.words('1st place'), '1st Place')
+})
+```
+
 
 ## Install
 
-    npm install capitalize
+npm install capitalize
 
 ## License
 
