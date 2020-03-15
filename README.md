@@ -113,7 +113,7 @@ test('Capitalize words, handling shorthand ordinals (1st, 2nd, 3rd) correctly', 
 
 ## Install
 
-npm install capitalize
+    npm install capitalize
 
 ## License
 
