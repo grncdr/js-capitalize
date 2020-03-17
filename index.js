@@ -1,4 +1,7 @@
 module.exports = function (string, preserve) {
+  if (string == undefined) {
+    return string;
+  }
   if (!preserve) {
     string = string.toLowerCase();
   }
@@ -6,6 +9,9 @@ module.exports = function (string, preserve) {
 }
 
 module.exports.words = function (string, preserve) {
+  if (string == undefined) {
+    return string;
+  }
   if (!preserve) {
     string = string.toLowerCase();
   }
