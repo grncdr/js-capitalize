@@ -1,4 +1,4 @@
-# capitalize
+# capitalize ![Build](https://github.com/grncdr/js-capitalize/workflows/Node%20CI/badge.svg)
 
 Capitalize the first letter of a string, or all words in a string.
 
