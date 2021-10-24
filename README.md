@@ -120,6 +120,26 @@ test('Capitalize words, handling shorthand ordinals (1st, 2nd, 3rd) correctly', 
 })
 ```
 
+and thanks to a suggestion from [@Songyu-Wang](https://github.com/grncdr/js-capitalize/issues/16), capitalize supports skipping words that should never be capitalized (e.g.  articles and coordinating conjunctions in English).
+
+```javascript
+test('Title-case words, by providing a skipWord regex', function (t) {
+  t.plan(1)
+  var opts = { skipWord: /^(a|the|an|and|or|but|in|on|of|it)$/ }
+  t.equal(
+    capitalize.words('the story of an unlikely feature and the way it was implemented', opts),
+    'The Story of an Unlikely Feature and the Way it Was Implemented'
+  )
+})
+
+test('Title-case words, by providing a skipWord callback', function (t) {
+  t.plan(1)
+  t.equal(
+    capitalize.words('this is nice eh?', { skipWord: (word) => word.length < 3 }),
+    'This is Nice eh?'
+  )
+})
+```
 
 ## Install
 

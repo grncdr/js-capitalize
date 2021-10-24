@@ -20,6 +20,7 @@ capitalize.words = function (string, opts) {
   var nonWord = /[^0-9a-zA-Z\u00C0-\u017F\u0400-\u04FF]+|$/g
   var match
   var out = ""
+  var count = 0
 
   while (match = nonWord.exec(string)) {
     var sep = match[0]
@@ -34,8 +35,14 @@ capitalize.words = function (string, opts) {
       out += word[0]
       word = word.substring(1)
     }
-    out += capitalize(word, opts) + sep
+    if (typeof opts.skipWord === 'function' && opts.skipWord(word, count)) {
+      out += word
+    } else {
+      out += capitalize(word, opts)
+    }
+    out += sep
     startOfWord = nonWord.lastIndex
+    count++
     if (startOfWord == string.length) {
       break
     }
@@ -50,6 +57,12 @@ function normalizeOptions(opts) {
   }
   if (typeof opts === 'boolean') {
     return { preserve: opts }
+  }
+  if (opts.skipWord instanceof RegExp) {
+    const rgx = opts.skipWord
+    opts.skipWord = function (word, position) {
+      return position > 0 && rgx.test(word)
+    }
   }
   return opts || {}
 }
