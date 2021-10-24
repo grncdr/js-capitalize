@@ -78,12 +78,22 @@ test('Capitalize words with cyrillic characters', function (t) {
 })
 ```
 
-and thanks to [@ultraflynn](https://github.com/grncdr/js-capitalize/pull/3), capitalize properly handles quotes within the string:
+and thanks to [@ultraflynn](https://github.com/grncdr/js-capitalize/pull/3) and [@DatGuyJonathon](https://github.com/grncdr/js-capitalize/issues/15) capitalize properly handles quotes within the string:
 
 ```javascript
 test('Capitalize each word, ignoring quotes', function(t) {
     t.plan(1)
     t.equal(capitalize.words("it's a nice day"), "It's A Nice Day")
+})
+
+test('Quotes test case 2', function(t) {
+    t.plan(1)
+    t.equal(capitalize.words("It’s a Boy"), "It’s A Boy")
+})
+
+test('Handles embedded quotes', function(t) {
+    t.plan(1)
+    t.equal(capitalize.words("'There's angels among us'"), "'There's Angels Among Us'")
 })
 ```
 
