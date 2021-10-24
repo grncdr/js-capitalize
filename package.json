@@ -9,7 +9,7 @@
     "markdown-code-blocks": "0.0.1"
   },
   "scripts": {
-    "test": "markdown-code-blocks -t javascript < README.md | node"
+    "test": "markdown-code-blocks -t javascript < README.md | sed \"s/require('capitalize')/require('.')/\" | node"
   },
   "repository": {
     "type": "git",
